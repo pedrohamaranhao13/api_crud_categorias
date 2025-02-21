@@ -1,4 +1,4 @@
-package br.com.phamtecnologia.domian.repositories;
+package br.com.phamtecnologia.repositories;
 
 import java.util.UUID;
 

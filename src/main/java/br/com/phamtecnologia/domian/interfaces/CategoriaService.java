@@ -4,10 +4,11 @@ import java.util.List;
 import java.util.UUID;
 
 import br.com.phamtecnologia.domian.entities.Categoria;
+import br.com.phamtecnologia.dtos.CategoriaResponseDto;
 
 public interface CategoriaService {
 	
-	void create(Categoria categoria) throws Exception;
+	void create(CategoriaResponseDto dto) throws Exception;
 	void update(Categoria categoria) throws Exception;
 	void delete(UUID id) throws Exception;
 	

@@ -8,7 +8,8 @@ import org.springframework.stereotype.Service;
 
 import br.com.phamtecnologia.domian.entities.Categoria;
 import br.com.phamtecnologia.domian.interfaces.CategoriaService;
-import br.com.phamtecnologia.domian.repositories.CategoriaRepository;
+import br.com.phamtecnologia.dtos.CategoriaResponseDto;
+import br.com.phamtecnologia.repositories.CategoriaRepository;
 
 @Service
 public class CategoriaServiceImpl implements CategoriaService{
@@ -17,7 +18,12 @@ public class CategoriaServiceImpl implements CategoriaService{
 	CategoriaRepository categoriaRepository;
 	
 	@Override
-	public void create(Categoria categoria) throws Exception {
+	public void create(CategoriaResponseDto dto) throws Exception {
+		
+		Categoria categoria = new Categoria();
+		categoria.setId(UUID.randomUUID());
+		categoria.setNome(dto.getNome());
+		
 		categoriaRepository.save(categoria);
 		
 	}
